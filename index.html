@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <meta name="description" content="Meet Beside: a little everyday support through small daily challenges and the people you trust. A Junction 2026 iOS prototype.">
+  <title>Beside — your day, a little lighter</title>
+  <link rel="icon" type="image/png" href="assets/beside-mark.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="move" viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="m10 9 3-2 3 5 4 1M4 12l4-1 3-4m2 5-3 5-5 3m7-8 4 4v6"/></symbol>
+    <symbol id="sleep" viewBox="0 0 24 24"><path d="M20.7 13.3A9 9 0 0 1 10.7 3.2 9 9 0 1 0 20.7 13.3Z"/><path d="M18 2v4m-2-2h4"/></symbol>
+    <symbol id="eat" viewBox="0 0 24 24"><path d="M4 3v5c0 4 6 4 6 0V3M7 3v19m13-1V3c-5 1-6 9 0 10"/></symbol>
+    <symbol id="social" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3 2-6a8 8 0 1 1 17-5Z"/><path d="M7 10h10M7 14h6"/></symbol>
+    <symbol id="medicine" viewBox="0 0 24 24"><path d="m5 11 6-6a5 5 0 0 1 7 7l-6 6a5 5 0 0 1-7-7Zm3-3 8 8"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  </svg>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Beside home"><img src="assets/beside-mark.png" width="42" height="42" alt=""><span>beside</span></a>
+    <nav aria-label="Main navigation"><a href="#how">The idea</a><a href="#people">Your people</a><a class="nav-try" href="#try">Try a small step <svg class="icon"><use href="#arrow"/></svg></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">A little everyday support</p>
+        <h1 id="hero-heading">Your day.<br>A little <em>lighter.</em></h1>
+        <p class="hero-description">Some days, the small things feel big. Beside helps you find one manageable step, with your people close by.</p>
+        <a class="button button-dark" href="#try">Find your small step <svg class="icon"><use href="#arrow"/></svg></a>
+        <p class="project-note"><span class="note-line"></span>An iOS prototype, made at Junction 2026.</p>
+        <div class="hero-bottom"><span>Built around your everyday life</span><div class="category-legend" aria-label="Five categories"><svg class="icon"><use href="#eat"/></svg><svg class="icon"><use href="#move"/></svg><svg class="icon"><use href="#sleep"/></svg><svg class="icon"><use href="#social"/></svg><svg class="icon"><use href="#medicine"/></svg></div></div>
+      </div>
+      <div class="demo-stage" id="try">
+        <div class="stage-backdrop" aria-hidden="true"></div>
+        <div class="demo-intro"><span class="tiny-label">A feel for Beside</span><span class="example-label">Interactive example</span></div>
+        <div class="phone" aria-label="Interactive Beside example">
+          <div class="phone-hardware" aria-hidden="true"><span>9:41</span><span class="island"></span><span class="battery"></span></div>
+          <div class="phone-screen">
+            <div class="app-heading"><span>Beside</span><svg class="icon"><use href="#heart"/></svg></div>
+            <p class="app-prompt" id="app-prompt">Choose one for today</p>
+            <div id="challenge-list" class="challenge-list"></div>
+            <div class="phone-home-indicator" aria-hidden="true"></div>
+          </div>
+        </div>
+        <span class="paper-note" aria-hidden="true">A little<br>counts, too.</span>
+        <div class="demo-categories" role="tablist" aria-label="Explore example categories">
+          <button id="tab-move" type="button" role="tab" aria-controls="challenge-list" aria-selected="true" data-category="move"><svg class="icon"><use href="#move"/></svg>Move</button>
+          <button id="tab-eat" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="eat"><svg class="icon"><use href="#eat"/></svg>Eat</button>
+          <button id="tab-sleep" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="sleep"><svg class="icon"><use href="#sleep"/></svg>Sleep</button>
+          <button id="tab-social" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="social"><svg class="icon"><use href="#social"/></svg>Social</button>
+          <button id="tab-medicine" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="medicine"><svg class="icon"><use href="#medicine"/></svg>Medicine</button>
+        </div>
+        <p class="demo-caption">Try a category. These are sample challenges, not a Health assessment.</p>
+      </div>
+    </section>
+
+    <section class="health-strip" aria-labelledby="health-title">
+      <div class="wrap health-inner"><div><p class="tiny-label">Start with what’s already there</p><h2 id="health-title">Your trackers. Your rhythm.</h2></div><div class="health-path" aria-label="Trackers share supported data with Apple Health, then Beside"><span>Your chosen trackers</span><svg class="icon"><use href="#arrow"/></svg><span class="health-node"><svg class="icon"><use href="#heart"/></svg>Apple Health</span><svg class="icon"><use href="#arrow"/></svg><span class="health-beside">beside</span></div></div>
+    </section>
+
+    <section class="how wrap section-space" id="how" aria-labelledby="how-heading">
+      <div class="section-heading"><p class="eyebrow">The everyday part of recovery</p><h2 id="how-heading">A next step you<br>don’t have to plan.</h2><p>Beside is being built for people rebuilding their routines, especially when figuring out what to do takes energy of its own.</p></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><div><h3>A little understanding</h3><p>With your permission, shared Apple Health readings give context about your usual sleep and movement. You keep using the trackers that work for you.</p></div></article>
+        <article class="step"><span class="step-number">02</span><div><h3>A choice that feels doable</h3><p>Three small challenges, chosen for the day. Start one directly, or make it smaller. A short stretch can be enough of a beginning.</p></div></article>
+        <article class="step"><span class="step-number">03</span><div><h3>Your people, within reach</h3><p>Invite a friend along or ask someone close for practical help. Beside can help with the words; you choose when to reach out.</p></div></article>
+      </div>
+    </section>
+
+    <section class="everyday wrap" aria-labelledby="everyday-heading">
+      <div class="everyday-top"><p class="tiny-label">Five parts of everyday life</p><h2 id="everyday-heading">Small things worth looking after.</h2></div>
+      <div class="category-grid">
+        <a href="#try" data-explore="eat" class="category-item eat"><svg class="icon"><use href="#eat"/></svg><h3>Eat</h3><p>Something simple<br>to eat.</p></a>
+        <a href="#try" data-explore="move" class="category-item move"><svg class="icon"><use href="#move"/></svg><h3>Move</h3><p>Movement at<br>your own pace.</p></a>
+        <a href="#try" data-explore="sleep" class="category-item sleep"><svg class="icon"><use href="#sleep"/></svg><h3>Sleep</h3><p>A little care for<br>your daily rhythm.</p></a>
+        <a href="#try" data-explore="social" class="category-item social"><svg class="icon"><use href="#social"/></svg><h3>Social</h3><p>An easy reason<br>to say hello.</p></a>
+        <a href="#try" data-explore="medicine" class="category-item medicine"><svg class="icon"><use href="#medicine"/></svg><h3>Medicine</h3><p>Support for your<br>existing routine.</p></a>
+      </div>
+    </section>
+
+    <section class="people-section section-space" id="people" aria-labelledby="people-heading">
+      <div class="wrap people-inner">
+        <div class="people-art" aria-hidden="true"><div class="people-orbit"><span class="orbit-label friend-label">A friend</span><img src="assets/beside-mark.png" width="190" height="190" alt=""><span class="orbit-label close-label">Someone close</span><svg class="orbit-path" viewBox="0 0 400 360"><path d="M80 80C-10 140 75 320 230 305S420 160 340 65"/></svg></div><p>Good to have your people ready.</p></div>
+        <div class="people-copy"><p class="eyebrow">Beside means together</p><h2 id="people-heading">Choose your people<br>on a good day.</h2><p>When a day feels harder, deciding who to ask can be a task in itself. Set up your trusted people while you have the headspace.</p><dl class="people-roles"><div><dt>A friend</dt><dd>A walk, a cup of tea, an ordinary catch-up.</dd></div><div><dt>Someone close</dt><dd>A hand with groceries, a pharmacy visit or things at home.</dd></div></dl><button type="button" class="text-button" id="people-invite">Try a simple invitation <svg class="icon"><use href="#arrow"/></svg></button></div>
+      </div>
+    </section>
+
+    <section class="closing wrap section-space"><p class="tiny-label">A working idea, growing one step at a time</p><h2>See what a small step<br>could look like today.</h2><a class="button button-dark" href="#try">Give it a try <svg class="icon"><use href="#arrow"/></svg></a><p class="closing-detail">Currently an iPhone prototype. No account needed to explore this example.</p></section>
+  </main>
+  <footer class="site-footer wrap"><div class="footer-main"><a class="brand" href="#"><img src="assets/beside-mark.png" width="34" height="34" alt=""><span>beside</span></a><span>Made by BurgerFlippers · Junction 2026</span><a href="https://github.com/BurgerFlippers/aaltodepression" target="_blank" rel="noopener noreferrer">Explore the project ↗</a></div><div class="footer-details"><p>This is a prototype for everyday support, not a diagnosis or an emergency service. Automatic support messages are a demo concept, not a live service.</p><p>Health data availability depends on your permissions and what each source shares with Apple Health. This website does not read your Health data.</p></div></footer>
+  <dialog id="invite-dialog" aria-labelledby="invite-title"><form method="dialog"><button class="dialog-close" aria-label="Close invitation">×</button></form><p class="tiny-label">A little help with the words</p><h2 id="invite-title">Say a small hello.</h2><label for="invite-text">Change anything you like.</label><textarea id="invite-text" rows="4">Fancy a short walk or a cup of tea together? We can keep it easy.</textarea><button class="button button-dark" type="button" id="copy-invite">Copy invitation <svg class="icon"><use href="#arrow"/></svg></button><p class="dialog-note" id="copy-status" aria-live="polite">Share it in your usual messaging app. Nothing is sent from this website.</p></dialog>
+  <div class="sr-only" aria-live="polite" id="demo-status"></div>
+</body>
+</html>
