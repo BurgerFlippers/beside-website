@@ -57,11 +57,12 @@
     <section class="app-demo section-space" id="try" aria-labelledby="try-heading">
       <div class="wrap">
         <div class="app-demo-heading"><p class="eyebrow">Try the app</p><h2 id="try-heading">Three screens.<br><span>Ready to tap through.</span></h2><p>Pick today&rsquo;s one thing, browse a month of trends and find the words to reach out. Each phone runs on its own, right here on the page.</p></div>
-        <div class="phone-row">
+        <div class="phone-row" id="phone-row" tabindex="0" role="group" aria-label="MindMaintainer app screens. Use the left and right arrow keys to move between them.">
           <figure class="phone-item"><mind-one-thing></mind-one-thing><figcaption><strong>One thing</strong>Three small tasks. Choose one, mark it done, or open the task demo.</figcaption></figure>
-          <figure class="phone-item"><mind-trends></mind-trends><figcaption><strong>Trends</strong>Your daily balance and signals. Change the demo scenario to try all three.</figcaption></figure>
+          <figure class="phone-item"><mind-trends></mind-trends><figcaption><strong>Trends <span class="caption-note">(for demo illustration, not shown to user)</span></strong>Your daily balance and signals. Change the demo scenario to try all three.</figcaption></figure>
           <figure class="phone-item"><mind-for-you></mind-for-you><figcaption><strong>For you</strong>Reach out in your own words, or see who to call when a day is hard.</figcaption></figure>
         </div>
+        <div class="phone-nav" id="phone-nav" hidden><button type="button" data-dir="-1" aria-controls="phone-row" aria-label="Previous screen"><svg class="icon icon-back"><use href="#arrow"/></svg></button><button type="button" data-dir="1" aria-controls="phone-row" aria-label="Next screen"><svg class="icon"><use href="#arrow"/></svg></button></div>
         <p class="demo-caption">Web demo with simulated data. It doesn&rsquo;t read Health data, place calls or send messages. Message drafts are only copied to your clipboard.</p>
       </div>
     </section>

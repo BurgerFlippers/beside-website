@@ -73,11 +73,24 @@ a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px sol
 .health-path p { margin: 0 0 0 auto; max-width: 300px; font-size: 11px; line-height: 1.7; color: #80768a; }
 .demo-caption { margin: 17px 0 0; font-size: 11px; line-height: 1.8; color: #7d7385; }
 .app-demo-heading { max-width: 640px; margin-bottom: 56px; }
-.phone-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
-.phone-item { margin: 0; min-width: 0; }
+/* The three demo phones always sit side by side. When they don't fit, the row scrolls sideways
+   (arrow buttons, arrow keys or a swipe). At full width all three fit exactly as before. */
+.phone-row { display: flex; gap: 28px; align-items: start; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  overscroll-behavior-x: contain; scrollbar-width: none; border-radius: 12px; }
+.phone-row::-webkit-scrollbar { display: none; }
+.phone-row:focus-visible { outline-offset: 8px; }
+.phone-item { margin: 0; min-width: 0; flex: 0 0 clamp(280px, calc((100% - 56px) / 3), 424px); scroll-snap-align: center; }
+.phone-nav { display: flex; justify-content: center; gap: 12px; margin-top: 30px; }
+.phone-nav button { width: 46px; height: 46px; display: grid; place-items: center; padding: 0; background: transparent; border: 1px solid #49404f; border-radius: 50%; color: var(--ink); }
+.phone-nav button:hover:not(:disabled) { background: #211a29; border-color: #74637f; }
+.phone-nav button:disabled { opacity: .35; cursor: default; }
+.phone-nav .icon { width: 19px; height: 19px; }
+.phone-nav .icon-back { transform: scaleX(-1); }
 .phone-item figcaption { max-width: 340px; margin: 22px auto 0; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .phone-item figcaption strong { display: block; color: var(--ink); font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.phone-item figcaption .caption-note { color: var(--muted); font-size: 12px; font-weight: 400; }
 .app-demo .demo-caption { margin-top: 44px; text-align: center; }
+.phone-nav:not([hidden]) + .demo-caption { margin-top: 26px; }
 mind-one-thing, mind-trends, mind-for-you { min-height: 200px; }
 .people-section { background: #131017; border-block: 1px solid var(--line); }
 .people-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 108px; align-items: center; }
@@ -139,8 +152,8 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .section-heading h2, .app-demo h2, .people-copy h2 { font-size: 40px; }
   .health-path p { margin-left: 20px; }
 }
-@media(max-width: 900px) {
-  .phone-row { grid-template-columns: minmax(0, 424px); justify-content: center; gap: 56px; }
+@media(max-width: 620px) {
+  .phone-item { flex-basis: min(100%, 424px); }
 }
 @media(max-width: 800px) {
   .wrap { width: calc(100% - 48px); }

@@ -81,11 +81,15 @@ func entry(offset: Int, day: Day, signalDay: Day, table: FeatureTable, history: 
 
 var sets: [String: [[String: Any]]] = [:]
 
-// TrendScenario loads 0, 0.5 and 1, rebuilt for each selected day.
-for (name, load) in [("steady", 0.0), ("someHarderDays", 0.5), ("harderStretch", 1.0)] {
+// TrendScenario (BesidePresentation.swift): loads 0, 0.65 and 1, rebuilt for each selected day.
+// Steady and A few harder days use the steady part of the simulated history; A harder stretch keeps the
+// history's own 15-day drift (usesDriftHistory). Measured on the day: about 89, 66 and 44.
+for (name, load, usesDriftHistory) in [("steady", 0.0, false), ("someHarderDays", 0.65, false), ("harderStretch", 1.0, true)] {
     sets[name] = (0...browseDays).map { o in
         let day = today - o
-        var table = SimulatedSource.table(endingOn: day + 15, homeTimeZone: homeTimeZone).truncated(through: day)
+        var table = usesDriftHistory
+            ? SimulatedSource.table(endingOn: day, homeTimeZone: homeTimeZone)
+            : SimulatedSource.table(endingOn: day + 15, homeTimeZone: homeTimeZone).truncated(through: day)
         let change = DemoScenarioRules.table(ending: day, load: load, source: table)
         for (key, series) in change.numbers { for (d, value) in series { table.set(key, d, value) } }
         let history = StepEngine.run(table: planningTable(table), through: day, homeTimeZone: homeTimeZone, locationEnabled: true)

@@ -19,8 +19,8 @@ This is a buildless site: edit `index.html`, `styles.css` or `app.js`, then refr
 - Dark background and lavender accents follow the current iOS interface.
 - The actual One thing screenshot from the MindMaintainer app, shown as a fixed hero preview.
 - **Try the app:** three interactive iPhone 18 Pro sized (402 × 874 pt) phones, rebuilt from the app's `docs/demo-page-handoff.md`:
-  - **One thing:** three tasks, choose, Mark as done, praise and extras, and the "Show more tasks (demo)" score panel with the six-category rule.
-  - **Trends:** a "Change demo scenario" picker (Steady, A few harder days, A harder stretch), daily balance, the 4-week chart, eight signal rows and day browsing. The web page only shows demo data, so the app's "Show my data" toggle and the Send SMS demo are left out.
+  - **One thing:** three tasks, choose, Mark as done, praise and extras, Revert (back to no choice, in the chosen and done states), and the "Show more tasks (demo)" score panel with the six-category rule.
+  - **Trends:** a "Change demo scenario" picker (Steady about 89, A few harder days about 66, A harder stretch about 44 with "A contact person would be notified"), daily balance, the 4-week chart, eight signal rows and day browsing. The web page only shows demo data, so the app's "Show my data" toggle and the Send SMS demo are left out.
   - **For you:** Reach out (people, draft, copy to clipboard) and Get support (demo people, emergency numbers as plain text).
 - Explanation of Apple Health context and preparing trusted people in advance.
 - Original research cover teaser and unchanged PDF download, credited to Aapo Visapää, Esa Iivonen, Konsta Raitanen and Veeti Pellinen. The review was prepared for Beside and is not peer reviewed.
@@ -39,6 +39,8 @@ The example does not connect to HealthKit, assess the visitor's health or persis
 ```
 
 The phones scale down to fit their container. The phone size is set by `PHONE` at the top of the script. State lives in memory and resets on reload.
+
+On the page the three phones always sit side by side. When the window is too narrow for all three, the row scrolls sideways: use the arrow buttons under the phones, the left and right arrow keys, or a swipe (`app.js`).
 
 Trends data is in `assets/demo/trends-fixtures.js` (one fixture per scenario), loaded automatically by the script. It is exported from the app's own Swift engine, so the website never re-implements scoring. To regenerate it (needs Xcode's Swift and the `aaltodepression` repo next to this one):
 

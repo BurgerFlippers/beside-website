@@ -354,7 +354,10 @@
   .stack { display: flex; flex-direction: column; gap: 12px; padding: 4px 16px 0; }
   .q-head { display: flex; align-items: center; gap: 4px; }
   .q-head > div:first-child { flex: 1; display: grid; gap: 2px; }
-  .q-tools { display: flex; }
+  .q-tools { display: flex; align-items: center; }
+  .revert-btn { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; padding: 0 6px 0 4px; color: var(--accent);
+    font-size: 15px; font-weight: 600; letter-spacing: -.24px; white-space: nowrap; }
+  .revert-btn .ic { font-size: 16px; stroke-width: 2.2; }
   .tile { position: relative; width: 100%; min-height: 150px; padding: 18px 24px; display: flex; flex-direction: column; align-items: center;
     justify-content: center; gap: 8px; border-radius: var(--r); background: var(--task); text-align: center; transition: opacity .2s, box-shadow .2s; }
   .tile .tile-icon { font-size: 36px; color: var(--accent); min-height: 40px; display: grid; place-items: center; }
@@ -757,7 +760,7 @@
           ${!sel ? '<p class="foot tert">You can also do more if you feel like it.</p>' : ''}
         </div><div class="q-tools">
           <button type="button" class="icon-btn" data-act="reason" data-k="reason" aria-label="Why these challenges?">${icon('info')}</button>
-          ${sel && !finished ? `<button type="button" class="icon-btn" data-act="change" data-k="change" aria-label="Choose another challenge">${icon('back')}</button>` : ''}
+          ${sel ? `<button type="button" class="revert-btn" data-act="revert" data-k="revert" aria-description="Clears today's choice and anything marked done">${icon('back')}Revert</button>` : ''}
         </div></div>`;
       if (!sel) {
         return head + offer.options.map(q => `<button type="button" class="tile" data-act="choose" data-id="${q.id}" data-k="t-${q.id}"
@@ -842,7 +845,10 @@
         case 'close-layer': this.closeLayer(); break;
         case 'reason': this.openLayer({ kind: 'alert', id: 'reason' }); break;
         case 'choose': offer.selectedID = el.dataset.id; offer.useSmaller = offer.startsSmall; this.render(); this.focusKey('done'); break;
-        case 'change': offer.selectedID = null; this.state.extraPick = null; this.render(); this.focusKey(`t-${offer.options[0].id}`); break;
+        case 'revert':
+          // SidequestDay.revert(): back to the untouched offer. No choice, nothing done, no extras; the same three options stay.
+          Object.assign(offer, { selectedID: null, useSmaller: false, completed: false, alsoDone: [] });
+          this.state.extraPick = null; this.render(); this.focusKey(`t-${offer.options[0].id}`); break;
         case 'done': offer.completed = true; this.render(); this.focusKey('reason'); break;
         case 'extra': this.state.extraPick = el.dataset.id; this.render(); this.focusKey('extra-done'); break;
         case 'extra-done':
@@ -954,7 +960,8 @@
     balance(e) {
       const v = e.bal;
       const has = typeof v === 'number';
-      const title = !has ? 'Learning your usual' : e.step === 2 ? 'Time to reach out' : e.step === 1 ? 'A little support could help' : 'Your daily balance';
+      // balanceTitle with demo data: the reach-out step reads "A contact person would be notified" (the web only shows demo data).
+      const title = !has ? 'Learning your usual' : e.step === 2 ? 'A contact person would be notified' : e.step === 1 ? 'A little support could help' : 'Your daily balance';
       const label = `Demo data · ${SCENARIOS.find(x => x[0] === this.state.scenario)[1]}`;
       return `<section class="card balance" aria-label="Daily balance">
         <div class="bal-top"><span class="head">Daily balance</span>${has ? `<span class="large num">${Math.round(v)}</span><span class="cap muted">/100</span>` : ''}</div>
