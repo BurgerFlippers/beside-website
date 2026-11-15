@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Meet Mind: small daily challenges, your everyday rhythm and the people you trust. An iOS prototype by BurgerFlippers, built at Junction 2026.">
+  <title>Mind — a little support for your everyday</title>
+  <link rel="icon" type="image/png" href="assets/beside-mark.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="move" viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="m10 9 3-2 3 5 4 1M4 12l4-1 3-4m2 5-3 5-5 3m7-8 4 4v6"/></symbol>
+    <symbol id="sleep" viewBox="0 0 24 24"><path d="M20.7 13.3A9 9 0 0 1 10.7 3.2 9 9 0 1 0 20.7 13.3Z"/><path d="M18 2v4m-2-2h4"/></symbol>
+    <symbol id="eat" viewBox="0 0 24 24"><path d="M4 3v5c0 4 6 4 6 0V3M7 3v19m13-1V3c-5 1-6 9 0 10"/></symbol>
+    <symbol id="social" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3 2-6a8 8 0 1 1 17-5Z"/><path d="M7 10h10M7 14h6"/></symbol>
+    <symbol id="medicine" viewBox="0 0 24 24"><path d="m5 11 6-6a5 5 0 0 1 7 7l-6 6a5 5 0 0 1-7-7Zm3-3 8 8"/></symbol>
+    <symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 8l12-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="18" cy="16" rx="3" ry="2"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="cup" viewBox="0 0 24 24"><path d="M4 6h12v7a6 6 0 0 1-12 0V6Zm12 1h2a3 3 0 0 1 0 6h-2M2 21h18"/></symbol>
+  </svg>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Mind home"><span class="logo-mark"><img src="assets/beside-mark.png" width="38" height="38" alt=""></span><span>Mind</span></a>
+    <nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#people">Your people</a><a href="#research">Research</a></nav>
+    <a class="button button-small" href="#try">Explore Mind <svg class="icon"><use href="#arrow"/></svg></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <div class="hero-copy"><p class="eyebrow">An iOS prototype for everyday support</p>
+      <h1 id="hero-heading">A little support.<br><span>For everyday life.</span></h1>
+      <p class="hero-description">Your sleep and activity help Mind suggest three small challenges. Choose one that feels doable, with your people close by.</p>
+      <div class="hero-actions"><a class="button" href="#try">Try a small step <svg class="icon"><use href="#arrow"/></svg></a><a class="button button-outline" href="#research">Read the research</a></div>
+      <p class="prototype-note">An iOS prototype by BurgerFlippers · Junction 2026</p>
+      </div>
+      <div class="hero-showcase"><div class="product-stage">
+        <div class="product-disc" aria-hidden="true"></div>
+        <figure class="product-device">
+          <img id="product-screen" src="assets/mind-routine.png" width="1170" height="2532" alt="Mind’s current iOS Routine screen: three purple challenge cards on a black background.">
+        </figure>
+      </div>
+      <p class="image-caption">The current Mind Routine screen.</p></div>
+    </section>
+
+    <section class="how section-space" id="how" aria-labelledby="how-heading">
+      <div class="wrap how-inner">
+        <div class="section-heading"><p class="eyebrow">Built around the life you already have</p><h2 id="how-heading">Your next step.<br><span>Already thought of.</span></h2><p>Some days, deciding where to begin takes energy of its own. Mind brings the choice down to something manageable.</p></div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><div><h3>Start with your usual rhythm.</h3><p>With your permission, shared Apple Health sleep and activity readings give context about changes in your everyday patterns.</p></div></article>
+          <article class="step"><span class="step-number">02</span><div><h3>Pick one small challenge.</h3><p>Choose from three concrete ideas across eating, movement, sleep, social connection and your existing medication routine.</p></div></article>
+          <article class="step"><span class="step-number">03</span><div><h3>Keep your people close.</h3><p>A walk with a friend or a little practical help can be part of the next step. Your trusted people are ready when you want to reach out.</p></div></article>
+        </div>
+      </div>
+      <div class="wrap health-path"><span>Your chosen trackers</span><svg class="icon"><use href="#arrow"/></svg><span class="health-node"><svg class="icon"><use href="#heart"/></svg>Apple Health</span><svg class="icon"><use href="#arrow"/></svg><span class="health-mind">Mind</span><p>You choose what to share. Availability depends on what each source records.</p></div>
+    </section>
+
+    <section class="experience wrap section-space" id="try" aria-labelledby="try-heading">
+      <div class="experience-copy"><p class="eyebrow">Get a feel for Mind</p><h2 id="try-heading">Three possibilities.<br><span>One small step.</span></h2><p>Choose a category and tap a challenge. This example follows the app’s latest flow: selecting one is enough.</p><div class="demo-categories" role="tablist" aria-label="Explore example categories"><button id="tab-move" type="button" role="tab" aria-controls="challenge-list" aria-selected="true" data-category="move"><svg class="icon"><use href="#move"/></svg>Move</button><button id="tab-eat" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="eat"><svg class="icon"><use href="#eat"/></svg>Eat</button><button id="tab-sleep" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="sleep"><svg class="icon"><use href="#sleep"/></svg>Sleep</button><button id="tab-social" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="social"><svg class="icon"><use href="#social"/></svg>Social</button><button id="tab-medicine" type="button" role="tab" aria-controls="challenge-list" aria-selected="false" tabindex="-1" data-category="medicine"><svg class="icon"><use href="#medicine"/></svg>Medicine</button></div><p class="demo-caption">Illustrative web demo. No Health connection or assessment.</p></div>
+      <div class="demo-panel" aria-label="Interactive Mind example"><div class="demo-panel-header"><span>Mind</span><svg class="icon"><use href="#social"/></svg></div><p class="app-prompt" id="app-prompt">Choose one for today</p><div id="challenge-list" class="challenge-list"></div><p class="choice-note" id="choice-note" hidden>A good choice. One small step is enough.</p><div class="demo-controls" id="demo-controls" hidden><button type="button" id="change-choice">Choose another</button><button type="button" id="invite-choice">Invite someone <svg class="icon"><use href="#arrow"/></svg></button></div></div>
+    </section>
+
+    <section class="people-section section-space" id="people" aria-labelledby="people-heading"><div class="wrap people-inner">
+      <div class="people-preview" aria-label="Illustrative trusted-people example"><p class="preview-label">Your people</p><div class="person-row selected"><div class="person-initial" aria-hidden="true">F</div><div><strong>A friend</strong><span>Everyday company</span></div><svg class="icon"><use href="#check"/></svg></div><div class="person-row"><div class="person-initial" aria-hidden="true">C</div><div><strong>Someone close</strong><span>A little practical help</span></div><span class="person-circle" aria-hidden="true"></span></div><button class="button" type="button" id="people-invite">Try a simple invitation <svg class="icon"><use href="#arrow"/></svg></button><p class="preview-footnote">Illustrative contacts. Your real people stay in the app.</p></div>
+      <div class="people-copy"><p class="eyebrow">A little easier, together</p><h2 id="people-heading">Choose your people<br><span>on a good day.</span></h2><p>Having someone ready means you don’t have to work out who to ask when a day feels harder.</p><dl class="people-roles"><div><dt>A friend</dt><dd>A walk, a cup of tea or an ordinary catch-up.</dd></div><div><dt>Someone close</dt><dd>A hand with groceries, a pharmacy visit or things at home.</dd></div></dl><p class="people-detail">Open your usual messaging app, or get help finding the words first. You choose what to send.</p></div>
+    </div></section>
+    <section class="research-section wrap section-space" id="research" aria-labelledby="research-heading">
+      <figure class="research-cover">
+        <a href="assets/research/iphone-and-wearable-signals-tms-relapse-review.pdf" target="_blank" rel="noopener noreferrer" aria-label="Preview the research PDF in a new tab">
+          <img src="assets/research/review-cover.png" width="990" height="1400" loading="lazy" alt="Cover of Aapo Visapää’s 2026 rapid scoping review on iPhone and wearable signals after TMS treatment.">
+        </a>
+        <figcaption>View the report <span aria-hidden="true">↗</span></figcaption>
+      </figure>
+      <div class="research-copy">
+        <p class="eyebrow">The thinking behind Mind</p>
+        <p class="research-type">Rapid scoping review · 2026</p>
+        <h2 id="research-heading">iPhone and wearable signals as early warning signs of depressive relapse after TMS treatment</h2>
+        <p class="research-author">Aapo Visapää · 15 November 2026</p>
+        <p class="research-description">What can iPhone and wearable data tell us about changes in everyday routines after TMS treatment? Read the review prepared for Beside, the original concept behind Mind.</p>
+        <a class="button button-dark" href="assets/research/iphone-and-wearable-signals-tms-relapse-review.pdf" download="iPhone-and-wearable-signals_TMS-relapse-review.pdf">Download the review <svg class="icon"><use href="#download"/></svg></a>
+        <p class="research-file">PDF · 36 pages · 204 KB</p>
+        <p class="research-note">Prepared for the Beyond the Clinic challenge at Junction 2026. This rapid scoping review has not been peer reviewed.</p>
+      </div>
+    </section>
+
+    <section class="closing wrap section-space"><p class="eyebrow">Start with what feels possible</p><h2>One small choice.<br><span>A place to begin.</span></h2><a class="button" href="#try">Explore the example <svg class="icon"><use href="#arrow"/></svg></a><p>Currently an iPhone prototype. No account needed to try the web example.</p></section>
+  </main>
+  <footer class="site-footer wrap"><div class="footer-main"><a class="brand" href="#" aria-label="Mind home"><span class="logo-mark"><img src="assets/beside-mark.png" width="32" height="32" alt=""></span><span>Mind</span></a><span>Made by BurgerFlippers · Junction 2026</span><a href="https://github.com/BurgerFlippers/aaltodepression" target="_blank" rel="noopener noreferrer">Explore the project ↗</a></div><div class="footer-details"><p>An everyday-support prototype, not a diagnosis or an emergency service. Automatic support messages remain a demo concept.</p><p>Health data availability depends on your permissions and what each source shares with Apple Health. This website does not read your Health data.</p></div></footer>
+  <dialog id="invite-dialog" aria-labelledby="invite-title"><form method="dialog"><button class="dialog-close" aria-label="Close invitation">×</button></form><p class="eyebrow">A little help with the words</p><h2 id="invite-title">Say a small hello.</h2><label for="invite-text">Change anything you like.</label><textarea id="invite-text" rows="4">Fancy a short walk or a cup of tea together? We can keep it easy.</textarea><button class="button" type="button" id="copy-invite">Copy invitation <svg class="icon"><use href="#download"/></svg></button><p class="dialog-note" id="copy-status" aria-live="polite">Share it in your usual messaging app. Nothing is sent from this website.</p></dialog>
+  <div class="sr-only" aria-live="polite" id="demo-status"></div>
+</body>
+</html>
