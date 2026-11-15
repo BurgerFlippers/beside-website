@@ -21,6 +21,7 @@ This is a buildless site: edit `index.html`, `styles.css` or `app.js`, then refr
 - Example friend invitation with editable text and a copy action. No messages are sent.
 - Explanation of Apple Health context and preparing trusted people in advance.
 - Original Beside logo reused from the iOS project's assets.
+- Research teaser with the supplied review’s original cover and a full PDF download.
 
 The interactive example does not connect to HealthKit, assess the visitor's health or persist personal data. Health-source compatibility depends on the source's exports and the user's permissions. The automatic support-message service remains a prototype concept.
 
