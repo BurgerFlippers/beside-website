@@ -1,0 +1,8 @@
+# Files the live site does not need. Everything the page loads lives in
+# index.html, styles.css, app.js and assets/.
+README.md
+dev.py
+tools/
+.claude/
+.gitignore
+.vercelignore
