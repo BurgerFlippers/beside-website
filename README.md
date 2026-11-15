@@ -17,7 +17,7 @@ This is a buildless site: edit `index.html`, `styles.css` or `app.js`, then refr
 ## Current version
 
 - Dark background and lavender accents follow the current iOS interface.
-- Actual Routine and Trends screenshots from the app, with a keyboard-accessible preview selector.
+- The actual Routine screenshot from the app, shown as a fixed hero preview.
 - Interactive example with five categories and three whole-card challenge choices per category. Selecting one shows gentle encouragement and an optional invitation.
 - Editable invitation with a copy action. No messages are sent.
 - Explanation of Apple Health context and preparing trusted people in advance.

@@ -109,27 +109,6 @@ bindArrowNavigation(tabs, tab => selectCategory(tab.dataset.category, true));
 document.querySelector('#change-choice').addEventListener('click', () => { selected = null; render(); announce('Choose another challenge.'); });
 document.querySelector('#invite-choice').addEventListener('click', () => openInvite(category));
 
-const screenTabs = [...document.querySelectorAll('[data-screen]')];
-const screenImage = document.querySelector('#product-screen');
-const screenDescriptions = {
-  routine: 'Mind’s current iOS Routine screen: three purple challenge cards on a black background.',
-  trends: 'Mind’s current iOS Trends screen: date selection, daily balance and recorded challenge. No readings are shared for this example day.'
-};
-function selectScreen(tab, focus = false) {
-  const key = tab.dataset.screen;
-  screenImage.src = `assets/mind-${key}.png`;
-  screenImage.alt = screenDescriptions[key];
-  screenTabs.forEach(item => {
-    const active = item === tab;
-    item.setAttribute('aria-selected', String(active));
-    item.tabIndex = active ? 0 : -1;
-  });
-  document.querySelector('#product-screen-panel').setAttribute('aria-labelledby', tab.id);
-  if (focus) tab.focus({ preventScroll: true });
-}
-screenTabs.forEach(tab => tab.addEventListener('click', () => selectScreen(tab)));
-bindArrowNavigation(screenTabs, selectScreen);
-
 function openInvite(key = 'social') {
   const drafts = {
     move: 'Fancy a short walk or a catch-up together? We can keep it easy.',
