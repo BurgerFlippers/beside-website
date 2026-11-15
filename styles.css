@@ -57,9 +57,9 @@ a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px sol
 .section-space { padding-block: 100px; }
 .how { border-block: 1px solid var(--line); background: #100d14; }
 .how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 115px; }
-.section-heading h2, .experience h2, .people-copy h2, .closing h2 { font-size: 46px; line-height: 1.16; font-weight: 550; letter-spacing: -1.8px; margin: 0 0 25px; }
-.section-heading h2 span, .experience h2 span, .people-copy h2 span, .closing h2 span { color: #8f829d; }
-.section-heading>p:last-child, .experience-copy>p:not(.eyebrow):not(.demo-caption), .people-copy>p { color: var(--muted); font-size: 15px; line-height: 1.85; max-width: 420px; }
+.section-heading h2, .app-demo h2, .people-copy h2, .closing h2 { font-size: 46px; line-height: 1.16; font-weight: 550; letter-spacing: -1.8px; margin: 0 0 25px; }
+.section-heading h2 span, .app-demo h2 span, .people-copy h2 span, .closing h2 span { color: #8f829d; }
+.section-heading>p:last-child, .app-demo-heading>p:not(.eyebrow), .people-copy>p { color: var(--muted); font-size: 15px; line-height: 1.85; max-width: 420px; }
 .steps { display: flex; flex-direction: column; gap: 30px; }
 .step { display: flex; align-items: flex-start; gap: 22px; }
 .step-number { font-size: 11px; color: #8e729f; padding-top: 5px; }
@@ -71,29 +71,14 @@ a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px sol
 .health-node .icon { width: 18px; color: var(--accent); }
 .health-mind { font-size: 22px; font-weight: 550; letter-spacing: -.6px; color: var(--ink); }
 .health-path p { margin: 0 0 0 auto; max-width: 300px; font-size: 11px; line-height: 1.7; color: #80768a; }
-.experience { display: grid; grid-template-columns: 1fr 1fr; gap: 108px; align-items: center; }
-.demo-categories { display: flex; gap: 5px; margin-top: 31px; }
-.demo-categories button { min-width: 64px; min-height: 69px; padding: 11px 9px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: transparent; border: 1px solid transparent; border-radius: 10px; font-size: 11px; color: #8b8096; }
-.demo-categories button .icon { width: 21px; height: 21px; }
-.demo-categories button[aria-selected=true] { color: var(--accent); background: #23192e; border-color: #443353; }
-.demo-categories button:hover { background: #1b1422; }
 .demo-caption { margin: 17px 0 0; font-size: 11px; line-height: 1.8; color: #7d7385; }
-.demo-panel { padding: 24px; background: #020203; border: 1px solid #37303f; border-radius: 28px; min-height: 596px; }
-.demo-panel-header { display: flex; justify-content: space-between; align-items: center; padding: 1px 5px 10px; }
-.demo-panel-header>span { font-size: 20px; font-weight: 550; letter-spacing: -.4px; }
-.demo-panel-header>.icon { color: var(--accent); }
-.app-prompt { margin: 16px 0 20px; color: #938a9b; font-size: 13px; }
-.challenge-list { display: flex; flex-direction: column; gap: 12px; }
-.challenge-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; width: 100%; min-height: 132px; padding: 23px 22px; border-radius: 20px; border: 1px solid #6a4b7a44; background: #34263f; color: var(--ink); text-align: center; }
-.challenge-card .icon { width: 34px; height: 34px; color: var(--accent); stroke-width: 1.8; }
-.challenge-card.tone-1 { background: #3d2b4b; }
-.challenge-card.tone-2 { background: #483253; }
-button.challenge-card:hover { border-color: #a985cc; background: #4d365e; }
-.challenge-title { max-width: 310px; font-size: 16px; line-height: 1.5; font-weight: 550; }
-.choice-note { font-size: 14px; color: var(--accent); text-align: center; line-height: 1.7; padding: 8px; }
-.demo-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
-.demo-controls button { border: 0; background: transparent; color: #c2a6f7; font-size: 12px; padding: 10px 0; display: inline-flex; align-items: center; gap: 8px; }
-.demo-controls button .icon { width: 16px; height: 16px; }
+.app-demo-heading { max-width: 640px; margin-bottom: 56px; }
+.phone-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.phone-item { margin: 0; min-width: 0; }
+.phone-item figcaption { max-width: 340px; margin: 22px auto 0; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.phone-item figcaption strong { display: block; color: var(--ink); font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.app-demo .demo-caption { margin-top: 44px; text-align: center; }
+mind-one-thing, mind-trends, mind-for-you { min-height: 200px; }
 .people-section { background: #131017; border-block: 1px solid var(--line); }
 .people-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 108px; align-items: center; }
 .people-preview { background: #1c191f; border: 1px solid #352d3d; border-radius: 24px; padding: 26px; }
@@ -150,12 +135,12 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .product-stage { gap: 35px; grid-template-columns: 1fr 280px 1fr; }
   .product-device { width: 280px; }
   .product-side h2 { font-size: 22px; }
-  .how-inner, .experience, .people-inner { gap: 62px; }
-  .section-heading h2, .experience h2, .people-copy h2 { font-size: 40px; }
+  .how-inner, .people-inner { gap: 62px; }
+  .section-heading h2, .app-demo h2, .people-copy h2 { font-size: 40px; }
   .health-path p { margin-left: 20px; }
-  .demo-panel { padding: 20px; }
-  .demo-categories { gap: 2px; }
-  .demo-categories button { min-width: 55px; padding-inline: 6px; }
+}
+@media(max-width: 900px) {
+  .phone-row { grid-template-columns: minmax(0, 424px); justify-content: center; gap: 56px; }
 }
 @media(max-width: 800px) {
   .wrap { width: calc(100% - 48px); }
@@ -173,15 +158,10 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .product-side p { font-size: 11px; }
   .product-disc { width: 470px; height: 470px; }
   .section-space { padding-block: 76px; }
-  .how-inner, .experience, .people-inner { gap: 42px; }
-  .section-heading h2, .experience h2, .people-copy h2 { font-size: 34px; letter-spacing: -1.2px; }
+  .how-inner, .people-inner { gap: 42px; }
+  .section-heading h2, .app-demo h2, .people-copy h2 { font-size: 34px; letter-spacing: -1.2px; }
   .health-path { gap: 16px; }
   .health-path p { width: 100%; margin: 0; max-width: none; }
-  .demo-categories { flex-wrap: wrap; max-width: 300px; }
-  .demo-categories button { min-width: 58px; }
-  .demo-panel { padding: 16px; }
-  .challenge-card { padding: 20px 15px; min-height: 140px; }
-  .challenge-title { font-size: 14px; }
   .people-preview { padding: 20px; }
   .person-row { padding: 14px 12px; gap: 10px; }
   .person-initial { width: 30px; height: 30px; }
@@ -210,9 +190,9 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .product-disc { width: 100%; height: 420px; border-radius: 150px; }
   .image-caption { font-size: 10px; line-height: 1.7; }
   .section-space { padding-block: 62px; }
-  .how-inner, .experience, .people-inner { grid-template-columns: 1fr; gap: 33px; }
-  .section-heading h2, .experience h2, .people-copy h2 { font-size: 36px; letter-spacing: -1.4px; }
-  .section-heading>p:last-child, .experience-copy>p:not(.eyebrow):not(.demo-caption), .people-copy>p { font-size: 14px; }
+  .how-inner, .people-inner { grid-template-columns: 1fr; gap: 33px; }
+  .section-heading h2, .app-demo h2, .people-copy h2 { font-size: 36px; letter-spacing: -1.4px; }
+  .section-heading>p:last-child, .app-demo-heading>p:not(.eyebrow), .people-copy>p { font-size: 14px; }
   .eyebrow { font-size: 11px; margin-bottom: 19px; }
   .steps { gap: 27px; }
   .step { gap: 16px; }
@@ -223,12 +203,7 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .health-node { gap: 5px; }
   .health-node .icon { width: 15px; }
   .health-mind { font-size: 20px; }
-  .demo-categories { flex-wrap: nowrap; max-width: none; gap: 4px; margin-top: 24px; }
-  .demo-categories button { min-width: 0; flex: 1; padding-inline: 5px; font-size: 10px; }
   .demo-caption { font-size: 10px; }
-  .demo-panel { padding: 22px; border-radius: 23px; min-height: 570px; }
-  .challenge-card { min-height: 132px; }
-  .challenge-title { font-size: 15px; }
   .people-inner { display: flex; flex-direction: column-reverse; gap: 32px; }
   .people-preview { width: 100%; padding: 23px; }
   .preview-label { font-size: 19px; }
@@ -252,7 +227,6 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
   .hero-actions .button { font-size: 11px; padding-inline: 12px; gap: 9px; }
   .health-path { gap: 10px; font-size: 10px; }
   .health-node .icon { display: none; }
-  .demo-panel { padding: 17px; }
   .people-preview { padding: 18px; }
 }
 @media(prefers-reduced-motion: reduce) {
@@ -303,4 +277,9 @@ dialog textarea { width: 100%; resize: vertical; padding: 14px; color: var(--ink
 }
 @media(max-width: 360px) {
   .hero h1 { font-size: 43px; }
+}
+@media(max-width: 380px) {
+  /* The longer MindMaintainer wordmark needs a little less room on the narrowest phones. */
+  .site-header { gap: 12px; }
+  .site-header .brand { font-size: 21px; gap: 9px; }
 }
