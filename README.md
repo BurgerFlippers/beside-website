@@ -12,7 +12,7 @@ python3 dev.py
 
 Open **http://localhost:3000**. To use another port: `python3 dev.py --port 3001`.
 
-This is a buildless site: edit `index.html`, `styles.css` or `app.js`, then refresh. The local server disables caching. There are no package dependencies, accounts, analytics or third-party fonts. Deployment has not been configured.
+This is a buildless site: edit `index.html`, `styles.css` or `app.js`, then refresh. The local server disables caching. There are no package dependencies, accounts, analytics or third-party font requests. Montserrat is served locally under the bundled SIL Open Font License. Deployment has not been configured.
 
 ## Current version
 
